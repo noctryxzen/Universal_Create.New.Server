@@ -5,6 +5,12 @@ local GetService = setmetatable({}, {
 	end
 })
 
+if queue_on_teleport then
+	queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/noctryxzen/Universal_Create.New.Server/refs/heads/main/Creator.luau"))()]])
+else
+	GetService.StarterGui:SetCore("SendNotification", {Title = "queue_on_teleport not supported", Text = "Please put the loadstring to your autoexec!", Duration = 5})
+end
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/noctryxzen/Block.Run/refs/heads/main/Module.luau"))()
 
 for i, v in next, GetService.Players:GetPlayers() do
