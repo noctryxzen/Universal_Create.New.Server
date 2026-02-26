@@ -25,7 +25,6 @@ for i, v in next, GetService.Players:GetPlayers() do
 		end
 	end
 end
-
 GetService.Players.PlayerAdded:Connect(function(v)
 	if Block.IsBlocked(v) then
 		GetService.TeleportService:Teleport(game.PlaceId)
