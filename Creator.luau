@@ -14,13 +14,13 @@ end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/noctryxzen/Block.Run/refs/heads/main/Module.luau"))()
 
 while task.wait() do
-	for _, Player in next, GetService.Players:GetPlayers() do
-		if Player ~= GetService.Players.LocalPlayer then
-			if Block.IsBlocked(Player) then
+	for i, v in next, GetService.Players:GetPlayers() do
+		if v ~= GetService.Players.LocalPlayer then
+			if Block.IsBlocked(v) then
 				GetService.TeleportService:Teleport(game.PlaceId)
 			else
 				task.delay(.7, function()
-					Block.Run(Player)
+					Block.Run(v)
 					GetService.TeleportService:Teleport(game.PlaceId)
 				end)
 			end
