@@ -17,6 +17,8 @@ for i, v in next, GetService.Players:GetPlayers() do
 	if v ~= GetService.Players.LocalPlayer then
 		if getgenv().exclude_friends and GetService.Players.LocalPlayer:IsFriendsWith(v.UserId) then continue end
 		if Block.IsBlocked(v) then
+			GetService.TeleportService:Teleport(game.PlaceId)
+		else
 			task.delay(.7, function()
 				Block.Run(v)
 				GetService.TeleportService:Teleport(game.PlaceId)
@@ -27,6 +29,8 @@ end
 GetService.Players.PlayerAdded:Connect(function(v)
 	if getgenv().exclude_friends and GetService.Players.LocalPlayer:IsFriendsWith(v.UserId) then return end
 	if Block.IsBlocked(v) then
+		GetService.TeleportService:Teleport(game.PlaceId)
+	else
 		task.delay(.7, function()
 			Block.Run(v)
 			GetService.TeleportService:Teleport(game.PlaceId)
